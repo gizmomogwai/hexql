@@ -216,10 +216,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>8565DF970D9EDD4F00DD7A24</string>
+						<string>856CBD060DAADB4600D84C59</string>
 						<key>history</key>
 						<array>
-							<string>8565DF880D9EDC0000DD7A24</string>
+							<string>856CBCF90DAADB2F00D84C59</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -316,16 +316,20 @@
 								<string>19C28FB6FE9D52B211CA2CBB</string>
 								<string>8D576316048677EA00EA77CD</string>
 								<string>1C37FBAC04509CD000000102</string>
+								<string>856CBD000DAADB4600D84C59</string>
+								<string>856CBD010DAADB4600D84C59</string>
+								<string>8D5B49A704867FD3000E48DA</string>
 								<string>1C08E77C0454961000C914BD</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>28</integer>
+									<integer>11</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {299, 660}}</string>
+							<string>{{0, 173}, {299, 660}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -353,8 +357,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -372,15 +374,10 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>8565DF930D9EDD4F00DD7A24</string>
+										<string>856CBD020DAADB4600D84C59</string>
 										<key>history</key>
 										<array>
-											<string>85B7C1830D97C6A500C2F957</string>
-											<string>8555FEA40D93E82B0090176F</string>
-										</array>
-										<key>prevStack</key>
-										<array>
-											<string>8555FEA20D93E82B0090176F</string>
+											<string>8565DF930D9EDD4F00DD7A24</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -420,8 +417,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {959, 121}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 59 1280 719 0 0 1280 778 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -461,6 +456,8 @@
 									<string>PBXCVSModule</string>
 								</dict>
 								<dict>
+									<key>BecomeActive</key>
+									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
@@ -476,6 +473,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {959, 121}}</string>
+										<key>RubberWindowFrame</key>
+										<string>0 59 1280 719 0 0 1280 778 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -503,11 +502,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>8565DF940D9EDD4F00DD7A24</string>
+				<string>856CBD030DAADB4600D84C59</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>8565DF950D9EDD4F00DD7A24</string>
+				<string>856CBD040DAADB4600D84C59</string>
 				<string>8555FE000D93C4DE0090176F</string>
-				<string>8565DF960D9EDD4F00DD7A24</string>
+				<string>856CBD050DAADB4600D84C59</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -690,7 +689,7 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>8565DF860D9EDC0000DD7A24</string>
-		<string>/Users/gizmo/_projects/_cocoa/trunk/HexQLPlugin/HexQooL.xcodeproj</string>
+		<string>/Users/gizmo/_projects/cocoa/trunk/HexQLPlugin/HexQooL.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 59 1280 719 0 0 1280 778 </string>

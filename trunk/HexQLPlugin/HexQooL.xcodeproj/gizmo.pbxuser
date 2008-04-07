@@ -53,7 +53,7 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
 					656,
-					254.20849609375,
+					254,
 				);
 				PBXFileTableDataSourceColumnsKey = (
 					PBXErrorsWarningsDataSource_TypeID,
@@ -171,16 +171,14 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 228514822;
-			PBXWorkspaceStateSaveDate = 228514822;
+			PBXPerProjectTemplateStateSaveDate = 229300988;
+			PBXWorkspaceStateSaveDate = 229300988;
 		};
 		perUserProjectItems = {
-			8555FEA20D93E82B0090176F /* PBXTextBookmark */ = 8555FEA20D93E82B0090176F /* PBXTextBookmark */;
-			8555FEA40D93E82B0090176F /* PBXTextBookmark */ = 8555FEA40D93E82B0090176F /* PBXTextBookmark */;
-			8565DF880D9EDC0000DD7A24 /* PBXTextBookmark */ = 8565DF880D9EDC0000DD7A24 /* PBXTextBookmark */;
 			8565DF930D9EDD4F00DD7A24 /* PBXTextBookmark */ = 8565DF930D9EDD4F00DD7A24 /* PBXTextBookmark */;
-			8565DF970D9EDD4F00DD7A24 /* PBXTextBookmark */ = 8565DF970D9EDD4F00DD7A24 /* PBXTextBookmark */;
-			85B7C1830D97C6A500C2F957 /* PBXTextBookmark */ = 85B7C1830D97C6A500C2F957 /* PBXTextBookmark */;
+			856CBCF90DAADB2F00D84C59 /* PBXTextBookmark */ = 856CBCF90DAADB2F00D84C59 /* PBXTextBookmark */;
+			856CBD020DAADB4600D84C59 /* PBXTextBookmark */ = 856CBD020DAADB4600D84C59 /* PBXTextBookmark */;
+			856CBD060DAADB4600D84C59 /* PBXTextBookmark */ = 856CBD060DAADB4600D84C59 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 852CFCD30D8F31060055FB1D /* Source Control */;
 		userBuildSettings = {
@@ -281,33 +279,6 @@
 			sepNavVisRange = "{0, 156}";
 		};
 	};
-	8555FE860D93DE020090176F /* GeneratePreviewForURL.m */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.objc;
-		name = GeneratePreviewForURL.m;
-		path = /Users/gizmo/_projects/_cocoa/trunk/HexQLPlugin/GeneratePreviewForURL.m;
-		sourceTree = "<absolute>";
-	};
-	8555FEA20D93E82B0090176F /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 8555FE860D93DE020090176F /* GeneratePreviewForURL.m */;
-		name = "GeneratePreviewForURL.m: 5";
-		rLen = 0;
-		rLoc = 147;
-		rType = 0;
-		vrLen = 1098;
-		vrLoc = 0;
-	};
-	8555FEA40D93E82B0090176F /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.c */;
-		name = "GenerateThumbnailForURL.c: 1";
-		rLen = 0;
-		rLoc = 0;
-		rType = 0;
-		vrLen = 43;
-		vrLoc = 0;
-	};
 	8555FEAD0D93EB930090176F /* template.dhtml */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {898, 784}}";
@@ -315,29 +286,6 @@
 			sepNavVisRange = "{0, 1156}";
 			sepNavWindowFrame = "{{38, 5}, {1030, 747}}";
 		};
-	};
-	8565DF740D9ED5E700DD7A24 /* GenerateThumbnailForURL.c */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.c;
-		name = GenerateThumbnailForURL.c;
-		path = /Users/gizmo/_projects/_cocoa/trunk/HexQLPlugin/GenerateThumbnailForURL.c;
-		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1026, 619}}";
-			sepNavSelRange = "{412, 23}";
-			sepNavVisRange = "{0, 843}";
-			sepNavWindowFrame = "{{15, 26}, {1030, 747}}";
-		};
-	};
-	8565DF880D9EDC0000DD7A24 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 8565DF740D9ED5E700DD7A24 /* GenerateThumbnailForURL.c */;
-		name = "GenerateThumbnailForURL.c: 11";
-		rLen = 23;
-		rLoc = 412;
-		rType = 0;
-		vrLen = 843;
-		vrLoc = 0;
 	};
 	8565DF930D9EDD4F00DD7A24 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -349,12 +297,42 @@
 		vrLen = 843;
 		vrLoc = 0;
 	};
-	8565DF970D9EDD4F00DD7A24 /* PBXTextBookmark */ = {
+	856CBCF80DAADB2F00D84C59 /* GenerateThumbnailForURL.c */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.c;
+		name = GenerateThumbnailForURL.c;
+		path = /Users/gizmo/_projects/cocoa/trunk/HexQLPlugin/GenerateThumbnailForURL.c;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1026, 619}}";
+			sepNavSelRange = "{575, 123}";
+			sepNavVisRange = "{0, 843}";
+			sepNavWindowFrame = "{{15, 26}, {1030, 747}}";
+		};
+	};
+	856CBCF90DAADB2F00D84C59 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.c */;
-		name = "GenerateThumbnailForURL.c: 11";
-		rLen = 23;
-		rLoc = 412;
+		fRef = 856CBCF80DAADB2F00D84C59 /* GenerateThumbnailForURL.c */;
+		rLen = 1;
+		rLoc = 12;
+		rType = 1;
+	};
+	856CBD020DAADB4600D84C59 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 856CBCF80DAADB2F00D84C59 /* GenerateThumbnailForURL.c */;
+		name = "GenerateThumbnailForURL.c: 21";
+		rLen = 0;
+		rLoc = 843;
+		rType = 0;
+		vrLen = 843;
+		vrLoc = 0;
+	};
+	856CBD060DAADB4600D84C59 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 856CBCF80DAADB2F00D84C59 /* GenerateThumbnailForURL.c */;
+		name = "GenerateThumbnailForURL.c: 13";
+		rLen = 123;
+		rLoc = 575;
 		rType = 0;
 		vrLen = 843;
 		vrLoc = 0;
@@ -379,23 +357,6 @@
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 1037}";
 		};
-	};
-	85B7C0E90D97165C00C2F957 /* GeneratePreviewForURL.m */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.objc;
-		name = GeneratePreviewForURL.m;
-		path = /Users/gizmo/_projects/_cocoa/trunk/HexQLPlugin/GeneratePreviewForURL.m;
-		sourceTree = "<absolute>";
-	};
-	85B7C1830D97C6A500C2F957 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 85B7C0E90D97165C00C2F957 /* GeneratePreviewForURL.m */;
-		name = "GeneratePreviewForURL.m: 94";
-		rLen = 0;
-		rLoc = 2833;
-		rType = 0;
-		vrLen = 1034;
-		vrLoc = 2060;
 	};
 	8D57630D048677EA00EA77CD /* HexQooL */ = {
 		activeExec = 0;
