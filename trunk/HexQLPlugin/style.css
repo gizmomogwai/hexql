@@ -1,0 +1,45 @@
+* {
+	font-family: monospace;
+}
+
+td {
+	text-align: center;
+  color: black;
+  background-color: white;
+}
+
+body {
+	background-color: black;
+}
+
+div.center {
+	margin: auto;
+}
+
+table.hex td {
+	width: 20px;
+}
+
+table.ascii td {
+	width: 30px;
+}
+
+table.ascii {
+	width: 400px;
+}
+
+table.hex {
+	width: 400px;
+}
+
+td.separator {
+	width:  20px;
+}
+
+table.hex td.rightSeparator, table.hex td.leftSeparator  {
+	width: 5px;
+}
+
+table.ascii td.rightSeparator, table.ascii td.leftSeparator {
+	width: 5px;
+}

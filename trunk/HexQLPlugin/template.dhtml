@@ -1,0 +1,55 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css"></link>
+  <link rel="stylesheet" type="text/css" href="jquery.ui.tabs.css"></link>
+  <script type="text/javascript" src="jquery-1.2.3.js"></script>
+  <script type="text/javascript" src="jquery.ui.tabs.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $('#tabs > ul').tabs();
+
+      function calcOther(node) {
+        var id = node.get(0).id;
+        var idx = id.indexOf('-');
+        var name = id.substring(0, idx);
+        var nr = id.substring(idx+1, id.length);
+        var otherName = name == "hex" ? "ascii" : "hex";
+        return $('#' + otherName + "-" + nr);
+      }
+      
+      function swapCss(node, key1, key2) {
+        var help = node.css(key1);
+        node.css(key1, node.css(key2));
+        node.css(key2, help);
+      }
+      
+      function doIt(node) {
+        var other = calcOther(node);
+        swapCss(node, 'color', 'background-color');
+        swapCss(other, 'color', 'background-color');
+      }
+      
+      $('td.linkedTable').hover(function() {
+          doIt($(this));
+        }, 
+        function() {
+          doIt($(this));
+        }
+      );      
+    });
+  </script>
+</head>
+<body>
+  <div id="tabs">
+    <ul>
+      <li><a href="#hex"><span>Hex</span></a></li>
+      <li><a href="#ascii"><span>Ascii</span></a></li>
+  </div>
+  <div id="hex">
+    <table><tr><td>«hextable»</td><td>«asciitable»</td></tr></table>
+  </div>
+  <div id="ascii">
+    «ascii»
+  </div>
+</body>
+</html>
