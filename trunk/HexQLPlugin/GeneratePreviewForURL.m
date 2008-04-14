@@ -59,15 +59,21 @@ NSString* createAscii(UInt8* buffer, CFIndex length) {
 
 NSString* createTable(UInt8* buffer, CFIndex length, int itemsPerRow, NSString* format, NSString* className, CharFilter* filter) {
 	NSMutableString* html = [[[NSMutableString alloc] init] autorelease];
-  [html appendFormat:@"<table class=\"%@\">", className];
-	
+  [html appendFormat:@"<table class=\"striped %@\" cellspacing=\"0\">", className];
+	CFIndex i = 0;
+  [html appendString:@"<tr><th></th>"];
+  for (i=0; i<itemsPerRow; i++) {
+    [html appendString:[NSString stringWithFormat:@"<th>%02X</th>", i]];
+  }
+  [html appendString:@"</tr>"];
+
 	Boolean newLine = true;
 	int count = 0;
   int totalCount = 0;
-	CFIndex i = 0;
 	for (i=0; i<length; i++) {
 		if (newLine) {
-		  [html appendString:@"<tr>"];
+		  [html appendString:@"<tr class=\"striped\">"];
+      [html appendString:[NSString stringWithFormat:@"<th>%04X</th>", i]] ;
 		  newLine = false;
 		}
 		
@@ -85,10 +91,11 @@ NSString* createTable(UInt8* buffer, CFIndex length, int itemsPerRow, NSString* 
 		  newLine = true;
 		  [html appendString:@"</tr>"];
 		  count = 0;
-		} else if (count % 8 == 0) {
+		} 
+    /*else if (count % 8 == 0) {
 		  [html appendString:@"<td class=\"leftSeparator\" />"];
 		  [html appendString:@"<td class=\"rightSeparator\" />"];
-		}
+		}*/
 	}
 	
 	if (count > 0) {

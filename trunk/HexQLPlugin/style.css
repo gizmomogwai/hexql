@@ -2,12 +2,6 @@
 	font-family: monospace;
 }
 
-td {
-	text-align: center;
-  color: black;
-  background-color: white;
-}
-
 body {
 	background-color: black;
 }
@@ -31,6 +25,23 @@ table.ascii {
 table.hex {
 	width: 400px;
 }
+
+table.striped tr.striped {
+  background-color: #EDF3FE;
+}
+
+table.striped tr.striped:hover {
+  background-color: #3875D7;
+}
+
+table.striped tr.striped.odd {
+  background-color: #ffffff;
+}
+
+table.striped tr.striped.odd:hover {
+  background-color: #3875D7;
+}
+
 
 td.separator {
 	width:  20px;
