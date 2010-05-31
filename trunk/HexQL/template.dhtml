@@ -24,7 +24,7 @@
         node.css("color", colorStyle);
         other.css("color", colorStyle);
       }
-      $('td.linkedTable').hover(function() {
+      $('table.linked td').hover(function() {
           doIt($(this), true);
         }, 
         function() {
@@ -44,7 +44,7 @@
   </div>
   <div id="hex">
     <div class="center">
-      <table>
+      <table class="linked">
         <tr><td>«hextable»</td><td id="separator" /><td>«asciitable»</td></tr>
       </table>
     </div>

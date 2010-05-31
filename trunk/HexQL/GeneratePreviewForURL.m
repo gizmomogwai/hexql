@@ -1,15 +1,15 @@
-#import <Foundation/Foundation.h>
-#import <CoreFoundation/CoreFoundation.h>
-#import <CoreServices/CoreServices.h>
+#import "Foundation/Foundation.h"
+#import "CoreFoundation/CoreFoundation.h"
+#import "CoreServices/CoreServices.h"
 
-#import <QuickLook/QuickLook.h>
+#import "QuickLook/QuickLook.h"
 
 #import "Templater.h"
 #import "CharFilter.h"
 #import "AsciiCharFilter.h"
 
-NSData* readFromUrl(NSURL* url) {
-  NSFileHandle* filehandle = [NSFileHandle fileHandleForReadingFromURL:url error:nil];
+NSData* readFromUrl(CFURLRef url) {
+  NSFileHandle* filehandle = [NSFileHandle fileHandleForReadingFromURL:(NSURL*)url error:nil];
   if (!filehandle) {
     NSLog(@"got no filehandle");
   }
@@ -22,7 +22,11 @@ NSString* createAscii(NSData* data) {
   
   [html appendString:@"<code>"];
 
-  NSString* bufferAsNsString = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+  NSMutableString* bufferAsNsString = [NSMutableString new] ;//[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+  const char* bytes = (const char*)[data bytes];
+  for (int i=0; i<[data length]; i++) {
+    [bufferAsNsString appendFormat:@"%c", bytes[i]];
+  }
   CFStringRef help = (CFStringRef)bufferAsNsString;
   CFStringRef escaped = CFXMLCreateStringByEscapingEntities(kCFAllocatorDefault, help, NULL);
   [bufferAsNsString release];
@@ -65,7 +69,7 @@ NSString* createTable(NSData* data, int itemsPerRow, NSString* format, NSString*
         newLine = false;
       }
       
-      const unichar c = ((const char*)[data bytes])[i];
+      const unichar c = ((const unsigned char*)[data bytes])[i];
       NSString* idString = [NSString stringWithFormat:@"%@-%d", className, totalCount];
       if ([filter filter:c]) {
         [html appendString:[NSString stringWithFormat:format, idString, c]];
@@ -116,8 +120,8 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
   if (firstBytes) {
     NSMutableDictionary* templateDic = [[[NSMutableDictionary alloc]init]autorelease];
     [templateDic setObject:(NSString*)(CFURLGetString(url)) forKey:@"path"];
-    [templateDic setObject:createTable(firstBytes, 16, @"<td class=\"linkedTable\" id=\"%@\">%02X</td>", @"hex", [[[CharFilter alloc]init]autorelease]) forKey:@"hextable"];
-    [templateDic setObject:createTable(firstBytes, 16, @"<td class=\"linkedTable\" id=\"%@\">%c</td>", @"ascii", [[[AsciiCharFilter alloc]init]autorelease]) forKey:@"asciitable"];
+    [templateDic setObject:createTable(firstBytes, 16, @"<td id=\"%@\">%02X </td>", @"hex", [[[CharFilter alloc]init]autorelease]) forKey:@"hextable"];
+    [templateDic setObject:createTable(firstBytes, 16, @"<td id=\"%@\">%c</td>", @"ascii", [[[AsciiCharFilter alloc]init]autorelease]) forKey:@"asciitable"];
     [templateDic setObject:createAscii(firstBytes) forKey:@"ascii"];
     [templateDic setObject:[[NSURL fileURLWithPath:[bundle resourcePath]] absoluteString] forKey:@"resourcepath"];
     @try {
