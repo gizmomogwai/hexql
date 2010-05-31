@@ -1,0 +1,53 @@
+* {
+	font-family: monospace;
+}
+
+body {
+	background-color: black;
+	width: 850px;
+}
+
+div.center {
+	margin: auto;
+}
+
+table.ascii td, table.ascii th, table.hex td, table.hex th {
+  width: 32px;
+  text-align: center;
+  border: 1px solid lightgrey;
+  border-left: none;
+  border-top: none;
+}
+
+table.ascii {
+	width: 400px;
+}
+
+table.hex {
+	width: 400px;
+}
+
+table.striped tr:nth-child(even) {
+  background-color: #EDF3FE;
+}
+
+table.striped tr:nth-child(even):hover {
+  background-color: #3875D7;
+}
+
+table.striped tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+table.striped tr:nth-child(odd):hover {
+  background-color: #3875D7;
+}
+
+
+td#separator {
+	width:  20px;
+}
+
+table td.rightSeparator, table.hex td.leftSeparator  {
+	width: 5px;
+}
