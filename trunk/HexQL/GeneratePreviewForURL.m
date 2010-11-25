@@ -126,9 +126,11 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
     [templateDic setObject:[[NSURL fileURLWithPath:[bundle resourcePath]] absoluteString] forKey:@"resourcepath"];
     @try {
       NSString* html = [templateDic applyToTemplate:template];
-
-      BOOL res = [html writeToFile:@"/Users/gizmo/out.txt" atomically:YES encoding:NSUTF8StringEncoding error:NULL];
-      NSLog(@"hat soweit geklappt %d", res);
+      NSString* debug = [[NSUserDefaults standardUserDefaults] stringForKey:@"HexQL.debug"];
+      if ([debug compare:@"yes"] == NSOrderedSame) {
+        BOOL res = [html writeToFile:@"/tmp/out.txt" atomically:YES encoding:NSUTF8StringEncoding error:NULL];
+        NSLog(@"hat soweit geklappt %d", res);
+      }
       
       NSMutableDictionary* props = [[[NSMutableDictionary alloc] init] autorelease];
       [props setObject:@"UTF-8" forKey:(NSString*) kQLPreviewPropertyTextEncodingNameKey];
