@@ -5,3 +5,4 @@
 @interface NSDictionary (Templater)
 - (NSString*) applyToTemplate:(NSString*) templateString;  
 @end
+
