@@ -1,4 +1,4 @@
-* HexQL Plugin [[https://travis-ci.org/gizmomogwai/hexql.svg?branch=master]]
+* HexQL Plugin [[https://travis-ci.org/gizmomogwai/hexql][https://travis-ci.org/gizmomogwai/hexql.svg?branch=master]]
 Generator for Quicklook that catches all files and shows the first few
 bytes a hex/ascii table or text.
 
