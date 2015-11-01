@@ -8,7 +8,10 @@
 #import "CharFilter.h"
 #import "AsciiCharFilter.h"
 
-NSData* readFromUrl(CFURLRef url) {
+/**
+ * read the first 4k from the url
+ */
+NSData* readFirstBytes(CFURLRef url) {
   NSFileHandle* filehandle = [NSFileHandle fileHandleForReadingFromURL:(NSURL*)url error:nil];
   if (!filehandle) {
     NSLog(@"got no filehandle");
@@ -17,6 +20,10 @@ NSData* readFromUrl(CFURLRef url) {
   return [filehandle readDataOfLength:4096];
 }
 
+/**
+ * converts the given data to a ascii string representation
+ * charachters not printable by ascii are left out
+ */
 NSString* createAscii(NSData* data) {
   NSMutableString* html = [[NSMutableString new] autorelease];
   
@@ -43,15 +50,21 @@ NSString* createAscii(NSData* data) {
   return html;
 }
   
-
-NSString* createTable(NSData* data, int itemsPerRow, NSString* format, NSString* className, CharFilter* filter) {
+/**
+ * create a html table from the data
+ */
+NSString* createTable(NSData* data,
+                      int itemsPerRow,
+                      NSString* format,
+                      NSString* className,
+                      CharFilter* filter) {
   NSMutableString* html = [[NSMutableString new] autorelease];
   [html appendFormat:@"<table class=\"striped %@\" cellspacing=\"0\">", className];
   [html appendString:@"<tr><th></th>"];
   {
     CFIndex i = 0;
     for (i=0; i<itemsPerRow; i++) {
-      [html appendString:[NSString stringWithFormat:@"<th>%02X</th>", i]];
+      [html appendString:[NSString stringWithFormat:@"<th>%02lX</th>", i]];
     }
     
   }
@@ -65,7 +78,7 @@ NSString* createTable(NSData* data, int itemsPerRow, NSString* format, NSString*
     for (i=0; i<[data length]; i++) {
       if (newLine) {
         [html appendString:@"<tr class=\"striped\">"];
-        [html appendString:[NSString stringWithFormat:@"<th>%04X</th>", i]] ;
+        [html appendString:[NSString stringWithFormat:@"<th>%04lX</th>", (unsigned long)i]] ;
         newLine = false;
       }
       
@@ -94,36 +107,66 @@ NSString* createTable(NSData* data, int itemsPerRow, NSString* format, NSString*
   return html;
 }
 
-OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options)
+NSString* getTemplateFromBundle(NSBundle *bundle)
+{
+    NSURL* templateUrl = [NSURL
+                          fileURLWithPath:[bundle
+                                           pathForResource:@"template"
+                                           ofType:@"dhtml"]];
+    if (!templateUrl) {
+        NSLog(@"templateUrl not found");
+        return nil;
+    }
+    NSLog(@"%@", [templateUrl path]);
+    
+    NSString* template = [NSString
+                          stringWithContentsOfURL:templateUrl
+                          encoding:(NSStringEncoding)NSUTF8StringEncoding error:nil];
+    if (!template) {
+        NSLog(@"could not load from template");
+        return nil;
+    }
+    return template;
+}
+
+OSStatus GeneratePreviewForURL(void *thisInterface,
+                               QLPreviewRequestRef preview,
+                               CFURLRef url,
+                               CFStringRef contentTypeUTI,
+                               CFDictionaryRef options)
 {
   NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
+    
+  // open bundle
   NSBundle* bundle = [NSBundle bundleWithIdentifier:@"com.flopcode.hexql"];
   if (!bundle) {
     NSLog(@"could not find boundle");
     return 1;
   }	
 
-  NSURL* templateUrl = [NSURL fileURLWithPath:[bundle pathForResource:@"template" ofType:@"dhtml"]];
-  if (!templateUrl) {
-    NSLog(@"templateUrl not found");
-    return 1;
-  }
-  NSLog(@"%@", [templateUrl path]);
-	
-  NSString* template = [NSString stringWithContentsOfURL:templateUrl encoding:(NSStringEncoding)NSUTF8StringEncoding error:nil];
+  NSString *template = getTemplateFromBundle(bundle);
   if (!template) {
-    NSLog(@"could not load from template");
     return 1;
   }
-
-  NSData* firstBytes = readFromUrl(url);
+    
+  NSData* firstBytes = readFirstBytes(url);
   if (firstBytes) {
     NSMutableDictionary* templateDic = [[[NSMutableDictionary alloc]init]autorelease];
-    [templateDic setObject:(NSString*)(CFURLGetString(url)) forKey:@"path"];
-    [templateDic setObject:createTable(firstBytes, 16, @"<td id=\"%@\">%02X </td>", @"hex", [[[CharFilter alloc]init]autorelease]) forKey:@"hextable"];
-    [templateDic setObject:createTable(firstBytes, 16, @"<td id=\"%@\">%c</td>", @"ascii", [[[AsciiCharFilter alloc]init]autorelease]) forKey:@"asciitable"];
-    [templateDic setObject:createAscii(firstBytes) forKey:@"ascii"];
-    [templateDic setObject:[[NSURL fileURLWithPath:[bundle resourcePath]] absoluteString] forKey:@"resourcepath"];
+    [templateDic
+       setObject:(NSString*)(CFURLGetString(url))
+       forKey:@"path"];
+    [templateDic
+       setObject:createTable(firstBytes, 16, @"<td id=\"%@\">%02X </td>", @"hex", [[[CharFilter alloc]init] autorelease])
+       forKey:@"hextable"];
+    [templateDic
+       setObject:createTable(firstBytes, 16, @"<td id=\"%@\">%c</td>", @"ascii", [[[AsciiCharFilter alloc]init]autorelease])
+       forKey:@"asciitable"];
+    [templateDic
+       setObject:createAscii(firstBytes)
+       forKey:@"ascii"];
+    [templateDic
+       setObject:[[NSURL fileURLWithPath:[bundle resourcePath]] absoluteString]
+       forKey:@"resourcepath"];
     @try {
       NSString* html = [templateDic applyToTemplate:template];
       NSString* debug = [[NSUserDefaults standardUserDefaults] stringForKey:@"HexQL.debug"];
@@ -133,12 +176,24 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
       }
       
       NSMutableDictionary* props = [[[NSMutableDictionary alloc] init] autorelease];
-      [props setObject:@"UTF-8" forKey:(NSString*) kQLPreviewPropertyTextEncodingNameKey];
-      [props setObject:@"text/html" forKey:(NSString*) kQLPreviewPropertyMIMETypeKey];
+      [props
+         setObject:@"UTF-8"
+         forKey:(NSString*) kQLPreviewPropertyTextEncodingNameKey];
+      [props
+         setObject:@"text/html"
+         forKey:(NSString*) kQLPreviewPropertyMIMETypeKey];
       CFStringRef fullPath = CFURLCopyFileSystemPath(url, kCFURLPOSIXPathStyle);
-      [props setObject:[NSString stringWithFormat:@"Contents of %@", fullPath] forKey:(NSString*)kQLPreviewPropertyDisplayNameKey];
-      [props setObject:[NSNumber numberWithInt:890] forKey:(NSString*)kQLPreviewPropertyWidthKey];
-      [props setObject:[NSNumber numberWithInt:600] forKey:(NSString*)kQLPreviewPropertyHeightKey];
+        NSLog(@"mhhh %@", fullPath);
+      [props
+         setObject:[NSString stringWithFormat:@"Contents of %@", fullPath]
+         forKey:(NSString*)kQLPreviewPropertyDisplayNameKey];
+      [props
+         setObject:[NSNumber numberWithInt:890]
+         forKey:(NSString*)kQLPreviewPropertyWidthKey];
+      [props
+         setObject:[NSNumber numberWithInt:600]
+         forKey:(NSString*)kQLPreviewPropertyHeightKey];
+        
       QLPreviewRequestSetDataRepresentation(preview,
 					    (CFDataRef)[html dataUsingEncoding:NSUTF8StringEncoding],
                                             kUTTypeHTML,
