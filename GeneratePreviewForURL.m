@@ -177,6 +177,8 @@ OSStatus GeneratePreviewForURL(void *thisInterface,
       NSDictionary *properties = @{
       (__bridge NSString *)kQLPreviewPropertyTextEncodingNameKey : @"UTF-8",
       (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/html",
+      (__bridge NSString *)kQLPreviewPropertyWidthKey : [NSNumber numberWithInt:870],
+      (__bridge NSString *)kQLPreviewPropertyHeightKey : [NSNumber numberWithInt:600],
       (__bridge NSString *)kQLPreviewPropertyAttachmentsKey : @{
           @"style.css" : @{
           (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/css",
