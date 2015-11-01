@@ -1,0 +1,7 @@
+* HexQL Plugin
+Generator for Quicklook that catches all files and shows the first few
+bytes a hex/ascii table or text.
+
+* Installation
+Clone repository and build. The build automatically puts the plugin to
+~/Library/QuickLook.
