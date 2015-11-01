@@ -7,8 +7,4 @@ task :compress => :build do
 	sh "tar cjvf #{filename} -C ~/Library/QuickLook HexQL.qlgenerator"
 end
 
-task :deploy => :compress do
-	sh "scp #{filename} gizmo@gizmomogwai.dyndns.org:~/Sites/cocoa"
-end
-
-task :default => :deploy
+task :default => :install
