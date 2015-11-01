@@ -1,9 +1,9 @@
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css"></link>
-  <link rel="stylesheet" type="text/css" href="jquery.ui.tabs.css"></link>
-  <script type="text/javascript" src="jquery-1.2.3.js"></script>
-  <script type="text/javascript" src="jquery.ui.tabs.js"></script>
+  <link rel="stylesheet" type="text/css" href="cid:style.css"></link>
+  <link rel="stylesheet" type="text/css" href="cid:jquery.ui.tabs.css"></link>
+  <script type="text/javascript" src="cid:jquery-1.2.3.js"></script>
+  <script type="text/javascript" src="cid:jquery.ui.tabs.js"></script>
   <script type="text/javascript">
     $(function() {
       $('#tabs > ul').tabs();

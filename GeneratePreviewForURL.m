@@ -16,7 +16,7 @@ NSData* readFirstBytes(CFURLRef url) {
   if (!filehandle) {
     NSLog(@"got no filehandle");
   }
-  
+
   return [filehandle readDataOfLength:4096];
 }
 
@@ -26,7 +26,7 @@ NSData* readFirstBytes(CFURLRef url) {
  */
 NSString* createAscii(NSData* data) {
   NSMutableString* html = [[NSMutableString new] autorelease];
-  
+
   [html appendString:@"<code>"];
 
   NSMutableString* bufferAsNsString = [NSMutableString new] ;//[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
@@ -44,12 +44,12 @@ NSString* createAscii(NSData* data) {
   [html appendString:(NSString*)stuff];
 
   CFRelease(escaped);
-  
+
   [html appendString:@"</code>"];
- 
+
   return html;
 }
-  
+
 /**
  * create a html table from the data
  */
@@ -66,7 +66,7 @@ NSString* createTable(NSData* data,
     for (i=0; i<itemsPerRow; i++) {
       [html appendString:[NSString stringWithFormat:@"<th>%02lX</th>", i]];
     }
-    
+
   }
   [html appendString:@"</tr>"];
 
@@ -74,14 +74,14 @@ NSString* createTable(NSData* data,
   int count = 0;
   int totalCount = 0;
   {
-    NSUInteger i; 
+    NSUInteger i;
     for (i=0; i<[data length]; i++) {
       if (newLine) {
         [html appendString:@"<tr class=\"striped\">"];
         [html appendString:[NSString stringWithFormat:@"<th>%04lX</th>", (unsigned long)i]] ;
         newLine = false;
       }
-      
+
       const unichar c = ((const unsigned char*)[data bytes])[i];
       NSString* idString = [NSString stringWithFormat:@"%@-%d", className, totalCount];
       if ([filter filter:c]) {
@@ -91,42 +91,46 @@ NSString* createTable(NSData* data,
       }
       count++;
       totalCount++;
-      
-      if (count % itemsPerRow == 0) {		
+
+      if (count % itemsPerRow == 0) {
         newLine = true;
         [html appendString:@"</tr>"];
         count = 0;
-      } 
+      }
     }
-  }	
+  }
   if (count > 0) {
     [html appendString:@"</tr>"];
   }
-	
+
   [html appendString:@"</table>"];
   return html;
 }
 
 NSString* getTemplateFromBundle(NSBundle *bundle)
 {
-    NSURL* templateUrl = [NSURL
+  NSURL* templateUrl = [NSURL
                           fileURLWithPath:[bundle
-                                           pathForResource:@"template"
-                                           ofType:@"dhtml"]];
-    if (!templateUrl) {
-        NSLog(@"templateUrl not found");
-        return nil;
-    }
-    NSLog(@"%@", [templateUrl path]);
-    
-    NSString* template = [NSString
+                                            pathForResource:@"template"
+                                                     ofType:@"dhtml"]];
+  if (!templateUrl) {
+    NSLog(@"templateUrl not found");
+    return nil;
+  }
+  NSLog(@"%@", [templateUrl path]);
+
+  NSString* template = [NSString
                           stringWithContentsOfURL:templateUrl
-                          encoding:(NSStringEncoding)NSUTF8StringEncoding error:nil];
-    if (!template) {
-        NSLog(@"could not load from template");
-        return nil;
-    }
-    return template;
+                                         encoding:(NSStringEncoding)NSUTF8StringEncoding error:nil];
+  if (!template) {
+    NSLog(@"could not load from template");
+    return nil;
+  }
+  return template;
+}
+
+NSData * resourceAsNSData(NSBundle *bundle, NSString *resource, NSString *extension) {
+  return [NSData dataWithContentsOfURL:[bundle URLForResource:resource withExtension:extension]];
 }
 
 OSStatus GeneratePreviewForURL(void *thisInterface,
@@ -136,68 +140,67 @@ OSStatus GeneratePreviewForURL(void *thisInterface,
                                CFDictionaryRef options)
 {
   NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
-    
+
   // open bundle
   NSBundle* bundle = [NSBundle bundleWithIdentifier:@"com.flopcode.hexql"];
   if (!bundle) {
     NSLog(@"could not find boundle");
     return 1;
-  }	
-
-  NSString *template = getTemplateFromBundle(bundle);
-  if (!template) {
-    return 1;
   }
-    
+
   NSData* firstBytes = readFirstBytes(url);
   if (firstBytes) {
-    NSMutableDictionary* templateDic = [[[NSMutableDictionary alloc]init]autorelease];
-    [templateDic
+    NSMutableDictionary* templateData = [[[NSMutableDictionary alloc]init]autorelease];
+    [templateData
        setObject:(NSString*)(CFURLGetString(url))
-       forKey:@"path"];
-    [templateDic
+          forKey:@"path"];
+    [templateData
        setObject:createTable(firstBytes, 16, @"<td id=\"%@\">%02X </td>", @"hex", [[[CharFilter alloc]init] autorelease])
-       forKey:@"hextable"];
-    [templateDic
+          forKey:@"hextable"];
+    [templateData
        setObject:createTable(firstBytes, 16, @"<td id=\"%@\">%c</td>", @"ascii", [[[AsciiCharFilter alloc]init]autorelease])
-       forKey:@"asciitable"];
-    [templateDic
+          forKey:@"asciitable"];
+    [templateData
        setObject:createAscii(firstBytes)
-       forKey:@"ascii"];
-    [templateDic
+          forKey:@"ascii"];
+    [templateData
        setObject:[[NSURL fileURLWithPath:[bundle resourcePath]] absoluteString]
-       forKey:@"resourcepath"];
+          forKey:@"resourcepath"];
     @try {
-      NSString* html = [templateDic applyToTemplate:template];
+      NSString* html = [templateData applyToTemplate:getTemplateFromBundle(bundle)];
       NSString* debug = [[NSUserDefaults standardUserDefaults] stringForKey:@"HexQL.debug"];
       if ([debug compare:@"yes"] == NSOrderedSame) {
-        BOOL res = [html writeToFile:@"/tmp/out.txt" atomically:YES encoding:NSUTF8StringEncoding error:NULL];
+        BOOL res = [html writeToFile:@"/tmp/out.html" atomically:YES encoding:NSUTF8StringEncoding error:nil];
         NSLog(@"hat soweit geklappt %d", res);
       }
-      
-      NSMutableDictionary* props = [[[NSMutableDictionary alloc] init] autorelease];
-      [props
-         setObject:@"UTF-8"
-         forKey:(NSString*) kQLPreviewPropertyTextEncodingNameKey];
-      [props
-         setObject:@"text/html"
-         forKey:(NSString*) kQLPreviewPropertyMIMETypeKey];
-      CFStringRef fullPath = CFURLCopyFileSystemPath(url, kCFURLPOSIXPathStyle);
-        NSLog(@"mhhh %@", fullPath);
-      [props
-         setObject:[NSString stringWithFormat:@"Contents of %@", fullPath]
-         forKey:(NSString*)kQLPreviewPropertyDisplayNameKey];
-      [props
-         setObject:[NSNumber numberWithInt:890]
-         forKey:(NSString*)kQLPreviewPropertyWidthKey];
-      [props
-         setObject:[NSNumber numberWithInt:600]
-         forKey:(NSString*)kQLPreviewPropertyHeightKey];
-        
+
+      NSDictionary *properties = @{
+      (__bridge NSString *)kQLPreviewPropertyTextEncodingNameKey : @"UTF-8",
+      (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/html",
+      (__bridge NSString *)kQLPreviewPropertyAttachmentsKey : @{
+          @"style.css" : @{
+          (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/css",
+          (__bridge NSString *)kQLPreviewPropertyAttachmentDataKey: resourceAsNSData(bundle, @"style", @"css")
+          },
+          @"jquery.ui.tabs.css" : @{
+          (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/css",
+          (__bridge NSString *)kQLPreviewPropertyAttachmentDataKey: resourceAsNSData(bundle, @"jquery.ui.tabs", @"css")
+          },
+          @"jquery-1.2.3.js" : @{
+          (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/javascript",
+          (__bridge NSString *)kQLPreviewPropertyAttachmentDataKey: resourceAsNSData(bundle, @"jquery-1.2.3", @"js")
+          },
+          @"jquery.ui.tabs.js" : @{
+          (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/javascript",
+          (__bridge NSString *)kQLPreviewPropertyAttachmentDataKey: resourceAsNSData(bundle, @"jquery.ui.tabs", @"js")
+          }
+        }
+      };
+
       QLPreviewRequestSetDataRepresentation(preview,
-					    (CFDataRef)[html dataUsingEncoding:NSUTF8StringEncoding],
+                                            (CFDataRef)[html dataUsingEncoding:NSUTF8StringEncoding],
                                             kUTTypeHTML,
-                                            (CFDictionaryRef)props);
+                                            (__bridge CFDictionaryRef)properties);
     } @catch (NSException* e) {
       NSLog(@"%@", [e reason]);
       [pool release];
