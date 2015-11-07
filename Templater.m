@@ -4,10 +4,14 @@
 @implementation NSDictionary (Templater)
 	
 	- (NSString*) applyToTemplate: (NSString*) templateString {
-    NSMutableString* res = [[NSMutableString new] autorelease];
+        @autoreleasepool {
+            
+            
+            NSMutableString* res = [NSMutableString stringWithCapacity:10];
+                                    //stringWithString:@""];//[[NSMutableString new] autorelease];
 
     Boolean escape = false;
-    NSMutableString* replacementToken = [[NSMutableString new] autorelease];
+            NSMutableString* replacementToken = [NSMutableString stringWithCapacity:10];//String:@""];
     NSUInteger length = [templateString length];
     NSUInteger i;
     for ( i=0; i<length; i++) {
@@ -33,7 +37,7 @@
       } else {
         if (currentChar == [@"«" characterAtIndex:0]) {
           escape = true;
-          replacementToken = [[[NSMutableString alloc]init]autorelease];
+            replacementToken = [NSMutableString stringWithCapacity:10];//alloc]init]autorelease];
         } else {
           [res appendString:[NSString stringWithCharacters:&currentChar length:1]];
         }
@@ -46,5 +50,5 @@
     
 		return res;
 	}
-
+    }
 @end
