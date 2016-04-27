@@ -137,79 +137,82 @@ OSStatus GeneratePreviewForURL(void *thisInterface,
                                QLPreviewRequestRef preview,
                                CFURLRef url,
                                CFStringRef contentTypeUTI,
-                               CFDictionaryRef options)
-{
-  NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
+                               CFDictionaryRef options) {
+  @autoreleasepool {
+    // open bundle
+    NSBundle* bundle = [NSBundle bundleWithIdentifier:@"com.flopcode.hexql"];
 
-  // open bundle
-  NSBundle* bundle = [NSBundle bundleWithIdentifier:@"com.flopcode.hexql"];
-  if (!bundle) {
-    NSLog(@"could not find boundle");
-    return 1;
-  }
-
-  NSData* firstBytes = readFirstBytes(url);
-  if (firstBytes) {
-    NSMutableDictionary* templateData = [[[NSMutableDictionary alloc]init]autorelease];
-    [templateData
-       setObject:(NSString*)(CFURLGetString(url))
-          forKey:@"path"];
-    [templateData
-       setObject:createTable(firstBytes, 16, @"<td id=\"%@\">%02X </td>", @"hex", [[[CharFilter alloc]init] autorelease])
-          forKey:@"hextable"];
-    [templateData
-       setObject:createTable(firstBytes, 16, @"<td id=\"%@\">%c</td>", @"ascii", [[[AsciiCharFilter alloc]init]autorelease])
-          forKey:@"asciitable"];
-    [templateData
-       setObject:createAscii(firstBytes)
-          forKey:@"ascii"];
-    [templateData
-       setObject:[[NSURL fileURLWithPath:[bundle resourcePath]] absoluteString]
-          forKey:@"resourcepath"];
-    @try {
-      NSString* html = [templateData applyToTemplate:getTemplateFromBundle(bundle)];
-      NSString* debug = [[NSUserDefaults standardUserDefaults] stringForKey:@"HexQL.debug"];
-      if ([debug compare:@"yes"] == NSOrderedSame) {
-        BOOL res = [html writeToFile:@"/tmp/out.html" atomically:YES encoding:NSUTF8StringEncoding error:nil];
-        NSLog(@"hat soweit geklappt %d", res);
-      }
-
-      NSDictionary *properties = @{
-      (__bridge NSString *)kQLPreviewPropertyTextEncodingNameKey : @"UTF-8",
-      (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/html",
-      (__bridge NSString *)kQLPreviewPropertyWidthKey : [NSNumber numberWithInt:870],
-      (__bridge NSString *)kQLPreviewPropertyHeightKey : [NSNumber numberWithInt:600],
-      (__bridge NSString *)kQLPreviewPropertyAttachmentsKey : @{
-          @"style.css" : @{
-          (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/css",
-          (__bridge NSString *)kQLPreviewPropertyAttachmentDataKey: resourceAsNSData(bundle, @"style", @"css")
-          },
-          @"jquery.ui.tabs.css" : @{
-          (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/css",
-          (__bridge NSString *)kQLPreviewPropertyAttachmentDataKey: resourceAsNSData(bundle, @"jquery.ui.tabs", @"css")
-          },
-          @"jquery-1.2.3.js" : @{
-          (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/javascript",
-          (__bridge NSString *)kQLPreviewPropertyAttachmentDataKey: resourceAsNSData(bundle, @"jquery-1.2.3", @"js")
-          },
-          @"jquery.ui.tabs.js" : @{
-          (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/javascript",
-          (__bridge NSString *)kQLPreviewPropertyAttachmentDataKey: resourceAsNSData(bundle, @"jquery.ui.tabs", @"js")
-          }
-        }
-      };
-
-      QLPreviewRequestSetDataRepresentation(preview,
-                                            (CFDataRef)[html dataUsingEncoding:NSUTF8StringEncoding],
-                                            kUTTypeHTML,
-                                            (__bridge CFDictionaryRef)properties);
-    } @catch (NSException* e) {
-      NSLog(@"%@", [e reason]);
-      [pool release];
+    if (!bundle) {
+      NSLog(@"could not find bundle");
       return 1;
     }
+
+    NSData* firstBytes = readFirstBytes(url);
+    if (firstBytes) {
+      NSMutableDictionary* templateData = [[[NSMutableDictionary alloc]init]autorelease];
+      [templateData
+        setObject:(NSString*)(CFURLGetString(url))
+           forKey:@"path"];
+      [templateData
+        setObject:createTable(firstBytes, 16, @"<td id=\"%@\">%02X </td>", @"hex", [[[CharFilter alloc]init] autorelease])
+           forKey:@"hextable"];
+      [templateData
+        setObject:createTable(firstBytes, 16, @"<td id=\"%@\">%c</td>", @"ascii", [[[AsciiCharFilter alloc]init]autorelease])
+           forKey:@"asciitable"];
+      [templateData
+        setObject:createAscii(firstBytes)
+           forKey:@"ascii"];
+      [templateData
+        setObject:[[NSURL fileURLWithPath:[bundle resourcePath]] absoluteString]
+           forKey:@"resourcepath"];
+      @try {
+        NSString* html = [templateData applyToTemplate:getTemplateFromBundle(bundle)];
+        /*
+          NSString* debug = [[NSUserDefaults standardUserDefaults] stringForKey:@"HexQL.debug"];
+          if ([debug compare:@"yes"] == NSOrderedSame) {
+          BOOL res = [html
+          writeToFile:@"/Users/gizmo/tmp/out.html"
+          atomically:YES
+          encoding:NSUTF8StringEncoding
+          error:nil];
+          }
+        */
+
+        NSDictionary *properties = @{
+        (__bridge NSString *)kQLPreviewPropertyTextEncodingNameKey : @"UTF-8",
+        (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/html",
+        (__bridge NSString *)kQLPreviewPropertyWidthKey : [NSNumber numberWithInt:870],
+        (__bridge NSString *)kQLPreviewPropertyHeightKey : [NSNumber numberWithInt:600],
+        (__bridge NSString *)kQLPreviewPropertyAttachmentsKey : @{
+            @"style.css" : @{
+            (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/css",
+            (__bridge NSString *)kQLPreviewPropertyAttachmentDataKey: resourceAsNSData(bundle, @"style", @"css")
+            },
+            @"jquery.ui.tabs.css" : @{
+            (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/css",
+            (__bridge NSString *)kQLPreviewPropertyAttachmentDataKey: resourceAsNSData(bundle, @"jquery.ui.tabs", @"css")
+            },
+            @"jquery-1.2.3.js" : @{
+            (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/javascript",
+            (__bridge NSString *)kQLPreviewPropertyAttachmentDataKey: resourceAsNSData(bundle, @"jquery-1.2.3", @"js")
+            },
+            @"jquery.ui.tabs.js" : @{
+            (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/javascript",
+            (__bridge NSString *)kQLPreviewPropertyAttachmentDataKey: resourceAsNSData(bundle, @"jquery.ui.tabs", @"js")
+            }
+          }
+        };
+        NSData* htmlData = [html dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:true];
+        QLPreviewRequestSetDataRepresentation(preview,
+                                              CFDataCreate(NULL, [htmlData bytes], [htmlData length]),
+                                              kUTTypeHTML,
+                                              (__bridge CFDictionaryRef)properties);
+      } @catch (NSException* e) {
+        NSLog(@"%@", [e reason]);
+        return 1;
+      }
+    }
   }
-  [pool release];
   return noErr;
 }
 

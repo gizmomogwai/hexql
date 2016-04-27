@@ -2,16 +2,12 @@
 #import <Foundation/NSException.h>
 
 @implementation NSDictionary (Templater)
-	
-	- (NSString*) applyToTemplate: (NSString*) templateString {
-        @autoreleasepool {
-            
-            
-            NSMutableString* res = [NSMutableString stringWithCapacity:10];
-                                    //stringWithString:@""];//[[NSMutableString new] autorelease];
 
+- (NSString*) applyToTemplate: (NSString*) templateString {
+  NSMutableString* res = [NSMutableString stringWithCapacity:10];
+  @autoreleasepool {
     Boolean escape = false;
-            NSMutableString* replacementToken = [NSMutableString stringWithCapacity:10];//String:@""];
+    NSMutableString* replacementToken = [NSMutableString stringWithCapacity:10];//String:@""];
     NSUInteger length = [templateString length];
     NSUInteger i;
     for ( i=0; i<length; i++) {
@@ -20,11 +16,10 @@
         if (currentChar == [@"»" characterAtIndex:0]) {
           NSString* toInsert = [self objectForKey:replacementToken];
           if (!toInsert) {
-            NSException* e = [NSException 
-                              //exceptionWithName:@"TemplaterException" 
-                              exceptionWithName:@"FileNotFoundException"
-                              reason: [NSString stringWithFormat:@"parameter '%@' not found", replacementToken]
-                              userInfo:nil];
+            NSException* e = [NSException
+                                 exceptionWithName:@"FileNotFoundException"
+                                            reason: [NSString stringWithFormat:@"parameter '%@' not found", replacementToken]
+                                          userInfo:nil];
             NSLog(@"throwing exception");
             @throw e;
           } else {
@@ -37,7 +32,7 @@
       } else {
         if (currentChar == [@"«" characterAtIndex:0]) {
           escape = true;
-            replacementToken = [NSMutableString stringWithCapacity:10];//alloc]init]autorelease];
+          replacementToken = [NSMutableString stringWithCapacity:10];//alloc]init]autorelease];
         } else {
           [res appendString:[NSString stringWithCharacters:&currentChar length:1]];
         }
@@ -47,8 +42,7 @@
     if (escape) {
       [[NSException exceptionWithName:@"TemplaterException" reason:@"wrong escape state" userInfo:nil]raise];
     }
-    
-		return res;
-	}
-    }
+    return res;
+  }
+}
 @end
