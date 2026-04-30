@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0710"
+   LastUpgradeVersion = "2600"
    version = "1.8">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8D57630D048677EA00EA77CD"
-               BuildableName = "HexQL.qlgenerator"
-               BlueprintName = "HexQL"
+               BlueprintIdentifier = "A10000000000000000000021"
+               BuildableName = "HexQL.app"
+               BlueprintName = "HexQLApp"
                ReferencedContainer = "container:HexQL.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,70 +28,45 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "85B387CE1BED78EA002E5473"
-               BuildableName = "Test.xctest"
-               BlueprintName = "Test"
-               ReferencedContainer = "container:HexQL.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D57630D048677EA00EA77CD"
-            BuildableName = "HexQL.qlgenerator"
-            BlueprintName = "HexQL"
-            ReferencedContainer = "container:HexQL.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      displayScaleIsEnabled = "NO"
-      displayScale = "1.00"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D57630D048677EA00EA77CD"
-            BuildableName = "HexQL.qlgenerator"
-            BlueprintName = "HexQL"
+            BlueprintIdentifier = "A10000000000000000000021"
+            BuildableName = "HexQL.app"
+            BlueprintName = "HexQLApp"
             ReferencedContainer = "container:HexQL.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
-      displayScaleIsEnabled = "NO"
-      displayScale = "1.00"
       buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8D57630D048677EA00EA77CD"
-            BuildableName = "HexQL.qlgenerator"
-            BlueprintName = "HexQL"
+            BlueprintIdentifier = "A10000000000000000000021"
+            BuildableName = "HexQL.app"
+            BlueprintName = "HexQLApp"
             ReferencedContainer = "container:HexQL.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

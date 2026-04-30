@@ -1,17 +1,10 @@
-desc 'build and test'
 task :build do
-  sh "xctool -workspace HexQL.xcodeproj/project.xcworkspace -scheme HexQL build test"
+  sh "xcodebuild -project HexQL.xcodeproj -scheme HexQLApp -configuration Release SYMROOT=build build"
 end
 
-filename = "HexQL.qlgenerator-#{Time.now.to_s.split()[0]}.tar.bz2"
-desc 'compress release'
-task :compress => :build do
-  sh "tar cjvf #{filename} -C ~/Library/QuickLook HexQL.qlgenerator"
+task :install do
+  sh "cp -r build/Release/HexQL.app ~/Applications/"
 end
 
-desc 'install'
-task :install => :build do
-  sh "qlmanage -r"
-end
 
-task :default => :install
+task :default => [:build, :install]

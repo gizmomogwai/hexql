@@ -1,4 +1,6 @@
 build
+.DS_Store
 *bz2
 xcuserdata
+*.xcuserstate
 HexQL.xcodeproj/gizmo*

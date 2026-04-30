@@ -1,4 +1,4 @@
-language: objective-c
-osx_image: xcode7.1
+language: swift
+os: osx
 script:
-  - rake
+  - xcodebuild -project HexQL.xcodeproj -scheme HexQLApp -configuration Debug SYMROOT=build build CODE_SIGN_IDENTITY=- CODE_SIGN_STYLE=Manual

@@ -3,408 +3,318 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		61E3BCFB0870B4F2002186A0 /* GenerateThumbnailForURL.c in Sources */ = {isa = PBXBuildFile; fileRef = 61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.c */; };
-		85AA7D9B11B01E2E00671D17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85AA7D9A11B01E2E00671D17 /* Foundation.framework */; };
-		85AA7E1F11B0211400671D17 /* template.dhtml in Resources */ = {isa = PBXBuildFile; fileRef = 85AA7E1A11B0211400671D17 /* template.dhtml */; };
-		85AA7E2011B0211400671D17 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 85AA7E1B11B0211400671D17 /* style.css */; };
-		85AA7E2111B0211400671D17 /* jquery.ui.tabs.css in Resources */ = {isa = PBXBuildFile; fileRef = 85AA7E1C11B0211400671D17 /* jquery.ui.tabs.css */; };
-		85AA7E2411B0214400671D17 /* jquery.ui.tabs.js in Resources */ = {isa = PBXBuildFile; fileRef = 85AA7E1D11B0211400671D17 /* jquery.ui.tabs.js */; };
-		85AA7E2511B0214400671D17 /* jquery-1.2.3.js in Resources */ = {isa = PBXBuildFile; fileRef = 85AA7E1E11B0211400671D17 /* jquery-1.2.3.js */; };
-		85B387D81BED78FD002E5473 /* TemplaterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B387D71BED78FD002E5473 /* TemplaterTest.m */; };
-		85B387D91BED795C002E5473 /* Templater.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BF085611B01D25000274DA /* Templater.m */; };
-		85BF085A11B01D25000274DA /* Templater.h in Headers */ = {isa = PBXBuildFile; fileRef = 85BF085311B01D25000274DA /* Templater.h */; };
-		85BF085B11B01D25000274DA /* CharFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 85BF085411B01D25000274DA /* CharFilter.h */; };
-		85BF085C11B01D25000274DA /* AsciiCharFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 85BF085511B01D25000274DA /* AsciiCharFilter.h */; };
-		85BF085D11B01D25000274DA /* Templater.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BF085611B01D25000274DA /* Templater.m */; };
-		85BF085E11B01D25000274DA /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BF085711B01D25000274DA /* GeneratePreviewForURL.m */; };
-		85BF085F11B01D25000274DA /* CharFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BF085811B01D25000274DA /* CharFilter.m */; };
-		85BF086011B01D25000274DA /* AsciiCharFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BF085911B01D25000274DA /* AsciiCharFilter.m */; };
-		8D576312048677EA00EA77CD /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 08FB77B6FE84183AC02AAC07 /* main.c */; settings = {ATTRIBUTES = (); }; };
-		8D576314048677EA00EA77CD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */; };
-		8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B49A704867FD3000E48DA /* InfoPlist.strings */; };
-		C86B05270671AA6E00DD9006 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86B05260671AA6E00DD9006 /* CoreServices.framework */; };
-		F28CFBFD0A3EC0AF000ABFF5 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28CFBFC0A3EC0AF000ABFF5 /* ApplicationServices.framework */; };
-		F28CFC030A3EC0C6000ABFF5 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F28CFC020A3EC0C6000ABFF5 /* QuickLook.framework */; };
+		A10000000000000000000040 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000010 /* main.swift */; };
+		A10000000000000000000041 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000012 /* PreviewProvider.swift */; };
+		A10000000000000000000042 /* HexPreviewRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000013 /* HexPreviewRenderer.swift */; };
+		A10000000000000000000043 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000014 /* Template.swift */; };
+		A10000000000000000000044 /* template.dhtml in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000017 /* template.dhtml */; };
+		A10000000000000000000045 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000018 /* style.css */; };
+		A10000000000000000000046 /* jquery.ui.tabs.css in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000019 /* jquery.ui.tabs.css */; };
+		A10000000000000000000047 /* jquery.ui.tabs.js in Resources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001A /* jquery.ui.tabs.js */; };
+		A10000000000000000000048 /* jquery-1.2.3.js in Resources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001B /* jquery-1.2.3.js */; };
+		A10000000000000000000049 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001E /* AppKit.framework */; };
+		A1000000000000000000004A /* QuickLookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001F /* QuickLookUI.framework */; };
+		A1000000000000000000004B /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10000000000000000000020 /* UniformTypeIdentifiers.framework */; };
+		A1000000000000000000004C /* HexQLPreviewExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001D /* HexQLPreviewExtension.appex */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A10000000000000000000060 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A10000000000000000000070 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A10000000000000000000031;
+			remoteInfo = HexQLPreviewExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A10000000000000000000053 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A1000000000000000000004C /* HexQLPreviewExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		08FB77B6FE84183AC02AAC07 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
-		61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = GenerateThumbnailForURL.c; sourceTree = "<group>"; };
-		85AA7D9A11B01E2E00671D17 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		85AA7E1A11B0211400671D17 /* template.dhtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = template.dhtml; sourceTree = "<group>"; };
-		85AA7E1B11B0211400671D17 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
-		85AA7E1C11B0211400671D17 /* jquery.ui.tabs.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = jquery.ui.tabs.css; sourceTree = "<group>"; };
-		85AA7E1D11B0211400671D17 /* jquery.ui.tabs.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.ui.tabs.js; sourceTree = "<group>"; };
-		85AA7E1E11B0211400671D17 /* jquery-1.2.3.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.2.3.js"; sourceTree = "<group>"; };
-		85B387CF1BED78EA002E5473 /* Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		85B387D31BED78EA002E5473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		85B387D71BED78FD002E5473 /* TemplaterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TemplaterTest.m; path = ../TemplaterTest.m; sourceTree = "<group>"; };
-		85BF085311B01D25000274DA /* Templater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Templater.h; sourceTree = "<group>"; };
-		85BF085411B01D25000274DA /* CharFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharFilter.h; sourceTree = "<group>"; };
-		85BF085511B01D25000274DA /* AsciiCharFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsciiCharFilter.h; sourceTree = "<group>"; };
-		85BF085611B01D25000274DA /* Templater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Templater.m; sourceTree = "<group>"; };
-		85BF085711B01D25000274DA /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
-		85BF085811B01D25000274DA /* CharFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharFilter.m; sourceTree = "<group>"; };
-		85BF085911B01D25000274DA /* AsciiCharFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsciiCharFilter.m; sourceTree = "<group>"; };
-		8D576316048677EA00EA77CD /* HexQL.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HexQL.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D576317048677EA00EA77CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		C86B05260671AA6E00DD9006 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
-		F28CFBFC0A3EC0AF000ABFF5 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
-		F28CFC020A3EC0C6000ABFF5 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = /System/Library/Frameworks/QuickLook.framework; sourceTree = "<absolute>"; };
+		A10000000000000000000010 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		A10000000000000000000011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A10000000000000000000012 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		A10000000000000000000013 /* HexPreviewRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexPreviewRenderer.swift; sourceTree = "<group>"; };
+		A10000000000000000000014 /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
+		A10000000000000000000015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A10000000000000000000016 /* HexQLPreviewExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HexQLPreviewExtension.entitlements; sourceTree = "<group>"; };
+		A10000000000000000000017 /* template.dhtml */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = template.dhtml; sourceTree = "<group>"; };
+		A10000000000000000000018 /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		A10000000000000000000019 /* jquery.ui.tabs.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = jquery.ui.tabs.css; sourceTree = "<group>"; };
+		A1000000000000000000001A /* jquery.ui.tabs.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jquery.ui.tabs.js; sourceTree = "<group>"; };
+		A1000000000000000000001B /* jquery-1.2.3.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "jquery-1.2.3.js"; sourceTree = "<group>"; };
+		A1000000000000000000001C /* HexQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HexQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1000000000000000000001D /* HexQLPreviewExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HexQLPreviewExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1000000000000000000001E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		A1000000000000000000001F /* QuickLookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLookUI.framework; path = System/Library/Frameworks/QuickLookUI.framework; sourceTree = SDKROOT; };
+		A10000000000000000000020 /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		85B387CC1BED78EA002E5473 /* Frameworks */ = {
+		A10000000000000000000051 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10000000000000000000049 /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D576313048677EA00EA77CD /* Frameworks */ = {
+		A10000000000000000000055 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D576314048677EA00EA77CD /* CoreFoundation.framework in Frameworks */,
-				C86B05270671AA6E00DD9006 /* CoreServices.framework in Frameworks */,
-				F28CFBFD0A3EC0AF000ABFF5 /* ApplicationServices.framework in Frameworks */,
-				F28CFC030A3EC0C6000ABFF5 /* QuickLook.framework in Frameworks */,
-				85AA7D9B11B01E2E00671D17 /* Foundation.framework in Frameworks */,
+				A1000000000000000000004A /* QuickLookUI.framework in Frameworks */,
+				A1000000000000000000004B /* UniformTypeIdentifiers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		089C166AFE841209C02AAC07 /* HexQL */ = {
+		A10000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
-				08FB77AFFE84173DC02AAC07 /* Source */,
-				089C167CFE841241C02AAC07 /* Resources */,
-				089C1671FE841209C02AAC07 /* External Frameworks and Libraries */,
-				85B387D01BED78EA002E5473 /* Test */,
-				19C28FB6FE9D52B211CA2CBB /* Products */,
-				85AA7D9A11B01E2E00671D17 /* Foundation.framework */,
+				A10000000000000000000005 /* HexQLApp */,
+				A10000000000000000000006 /* HexQLPreviewExtension */,
+				A10000000000000000000004 /* Preview Resources */,
+				A10000000000000000000003 /* Frameworks */,
+				A10000000000000000000002 /* Products */,
 			);
-			indentWidth = 2;
-			name = HexQL;
-			sourceTree = "<group>";
-			tabWidth = 2;
-			wrapsLines = 0;
-		};
-		089C1671FE841209C02AAC07 /* External Frameworks and Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				F28CFC020A3EC0C6000ABFF5 /* QuickLook.framework */,
-				F28CFBFC0A3EC0AF000ABFF5 /* ApplicationServices.framework */,
-				C86B05260671AA6E00DD9006 /* CoreServices.framework */,
-				0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */,
-			);
-			name = "External Frameworks and Libraries";
 			sourceTree = "<group>";
 		};
-		089C167CFE841241C02AAC07 /* Resources */ = {
+		A10000000000000000000002 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				85AA7E1A11B0211400671D17 /* template.dhtml */,
-				85AA7E1B11B0211400671D17 /* style.css */,
-				85AA7E1C11B0211400671D17 /* jquery.ui.tabs.css */,
-				85AA7E1D11B0211400671D17 /* jquery.ui.tabs.js */,
-				85AA7E1E11B0211400671D17 /* jquery-1.2.3.js */,
-				8D576317048677EA00EA77CD /* Info.plist */,
-				8D5B49A704867FD3000E48DA /* InfoPlist.strings */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		08FB77AFFE84173DC02AAC07 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				08FB77B6FE84183AC02AAC07 /* main.c */,
-				85BF085311B01D25000274DA /* Templater.h */,
-				85BF085611B01D25000274DA /* Templater.m */,
-				85BF085411B01D25000274DA /* CharFilter.h */,
-				85BF085811B01D25000274DA /* CharFilter.m */,
-				85BF085511B01D25000274DA /* AsciiCharFilter.h */,
-				85BF085911B01D25000274DA /* AsciiCharFilter.m */,
-				85BF085711B01D25000274DA /* GeneratePreviewForURL.m */,
-				61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.c */,
-			);
-			name = Source;
-			sourceTree = "<group>";
-		};
-		19C28FB6FE9D52B211CA2CBB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8D576316048677EA00EA77CD /* HexQL.qlgenerator */,
-				85B387CF1BED78EA002E5473 /* Test.xctest */,
+				A1000000000000000000001C /* HexQL.app */,
+				A1000000000000000000001D /* HexQLPreviewExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		85B387D01BED78EA002E5473 /* Test */ = {
+		A10000000000000000000003 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				85B387D71BED78FD002E5473 /* TemplaterTest.m */,
-				85B387D31BED78EA002E5473 /* Info.plist */,
+				A1000000000000000000001E /* AppKit.framework */,
+				A1000000000000000000001F /* QuickLookUI.framework */,
+				A10000000000000000000020 /* UniformTypeIdentifiers.framework */,
 			);
-			path = Test;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000004 /* Preview Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000017 /* template.dhtml */,
+				A10000000000000000000018 /* style.css */,
+				A10000000000000000000019 /* jquery.ui.tabs.css */,
+				A1000000000000000000001A /* jquery.ui.tabs.js */,
+				A1000000000000000000001B /* jquery-1.2.3.js */,
+			);
+			name = "Preview Resources";
+			sourceTree = "<group>";
+		};
+		A10000000000000000000005 /* HexQLApp */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000010 /* main.swift */,
+				A10000000000000000000011 /* Info.plist */,
+			);
+			path = HexQLApp;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000006 /* HexQLPreviewExtension */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000012 /* PreviewProvider.swift */,
+				A10000000000000000000013 /* HexPreviewRenderer.swift */,
+				A10000000000000000000014 /* Template.swift */,
+				A10000000000000000000015 /* Info.plist */,
+				A10000000000000000000016 /* HexQLPreviewExtension.entitlements */,
+			);
+			path = HexQLPreviewExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		8D57630E048677EA00EA77CD /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				85BF085A11B01D25000274DA /* Templater.h in Headers */,
-				85BF085B11B01D25000274DA /* CharFilter.h in Headers */,
-				85BF085C11B01D25000274DA /* AsciiCharFilter.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		85B387CE1BED78EA002E5473 /* Test */ = {
+		A10000000000000000000021 /* HexQLApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 85B387D61BED78EA002E5473 /* Build configuration list for PBXNativeTarget "Test" */;
+			buildConfigurationList = A10000000000000000000085 /* Build configuration list for PBXNativeTarget "HexQLApp" */;
 			buildPhases = (
-				85B387CB1BED78EA002E5473 /* Sources */,
-				85B387CC1BED78EA002E5473 /* Frameworks */,
-				85B387CD1BED78EA002E5473 /* Resources */,
+				A10000000000000000000050 /* Sources */,
+				A10000000000000000000051 /* Frameworks */,
+				A10000000000000000000052 /* Resources */,
+				A10000000000000000000053 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A10000000000000000000061 /* PBXTargetDependency */,
 			);
-			name = Test;
-			productName = Test;
-			productReference = 85B387CF1BED78EA002E5473 /* Test.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		8D57630D048677EA00EA77CD /* HexQL */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2CA3261E0896AD4900168862 /* Build configuration list for PBXNativeTarget "HexQL" */;
-			buildPhases = (
-				8D57630E048677EA00EA77CD /* Headers */,
-				8D57630F048677EA00EA77CD /* Resources */,
-				8D576311048677EA00EA77CD /* Sources */,
-				8D576313048677EA00EA77CD /* Frameworks */,
-				8D576315048677EA00EA77CD /* Rez */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = HexQL;
-			productInstallPath = /Library/QuickLook;
+			name = HexQLApp;
 			productName = HexQL;
-			productReference = 8D576316048677EA00EA77CD /* HexQL.qlgenerator */;
-			productType = "com.apple.product-type.bundle";
+			productReference = A1000000000000000000001C /* HexQL.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A10000000000000000000031 /* HexQLPreviewExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A10000000000000000000088 /* Build configuration list for PBXNativeTarget "HexQLPreviewExtension" */;
+			buildPhases = (
+				A10000000000000000000054 /* Sources */,
+				A10000000000000000000055 /* Frameworks */,
+				A10000000000000000000056 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HexQLPreviewExtension;
+			productName = HexQLPreviewExtension;
+			productReference = A1000000000000000000001D /* HexQLPreviewExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		089C1669FE841209C02AAC07 /* Project object */ = {
+		A10000000000000000000070 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
-					85B387CE1BED78EA002E5473 = {
-						CreatedOnToolsVersion = 7.1;
+					A10000000000000000000021 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					A10000000000000000000031 = {
+						CreatedOnToolsVersion = 26.0;
 					};
 				};
 			};
-			buildConfigurationList = 2CA326220896AD4900168862 /* Build configuration list for PBXProject "HexQL" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 1;
+			buildConfigurationList = A10000000000000000000082 /* Build configuration list for PBXProject "HexQL" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
+				en,
+				Base,
 			);
-			mainGroup = 089C166AFE841209C02AAC07 /* HexQL */;
+			mainGroup = A10000000000000000000001;
+			productRefGroup = A10000000000000000000002 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D57630D048677EA00EA77CD /* HexQL */,
-				85B387CE1BED78EA002E5473 /* Test */,
+				A10000000000000000000021 /* HexQLApp */,
+				A10000000000000000000031 /* HexQLPreviewExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		85B387CD1BED78EA002E5473 /* Resources */ = {
+		A10000000000000000000052 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D57630F048677EA00EA77CD /* Resources */ = {
+		A10000000000000000000056 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85AA7E1F11B0211400671D17 /* template.dhtml in Resources */,
-				85AA7E2411B0214400671D17 /* jquery.ui.tabs.js in Resources */,
-				85AA7E2511B0214400671D17 /* jquery-1.2.3.js in Resources */,
-				8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */,
-				85AA7E2011B0211400671D17 /* style.css in Resources */,
-				85AA7E2111B0211400671D17 /* jquery.ui.tabs.css in Resources */,
+				A10000000000000000000044 /* template.dhtml in Resources */,
+				A10000000000000000000045 /* style.css in Resources */,
+				A10000000000000000000046 /* jquery.ui.tabs.css in Resources */,
+				A10000000000000000000047 /* jquery.ui.tabs.js in Resources */,
+				A10000000000000000000048 /* jquery-1.2.3.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXRezBuildPhase section */
-		8D576315048677EA00EA77CD /* Rez */ = {
-			isa = PBXRezBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXRezBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		85B387CB1BED78EA002E5473 /* Sources */ = {
+		A10000000000000000000050 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85B387D91BED795C002E5473 /* Templater.m in Sources */,
-				85B387D81BED78FD002E5473 /* TemplaterTest.m in Sources */,
+				A10000000000000000000040 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D576311048677EA00EA77CD /* Sources */ = {
+		A10000000000000000000054 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D576312048677EA00EA77CD /* main.c in Sources */,
-				61E3BCFB0870B4F2002186A0 /* GenerateThumbnailForURL.c in Sources */,
-				85BF085D11B01D25000274DA /* Templater.m in Sources */,
-				85BF085E11B01D25000274DA /* GeneratePreviewForURL.m in Sources */,
-				85BF085F11B01D25000274DA /* CharFilter.m in Sources */,
-				85BF086011B01D25000274DA /* AsciiCharFilter.m in Sources */,
+				A10000000000000000000041 /* PreviewProvider.swift in Sources */,
+				A10000000000000000000042 /* HexPreviewRenderer.swift in Sources */,
+				A10000000000000000000043 /* Template.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		8D5B49A704867FD3000E48DA /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				089C167EFE841241C02AAC07 /* English */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		A10000000000000000000061 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A10000000000000000000031 /* HexQLPreviewExtension */;
+			targetProxy = A10000000000000000000060 /* PBXContainerItemProxy */;
 		};
-/* End PBXVariantGroup section */
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2CA3261F0896AD4900168862 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DEPLOYMENT_LOCATION = YES;
-				DSTROOT = "$(HOME)";
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = /Library/QuickLook;
-				PRODUCT_BUNDLE_IDENTIFIER = com.flopcode.hexql;
-				PRODUCT_NAME = HexQL;
-				WRAPPER_EXTENSION = qlgenerator;
-			};
-			name = Debug;
-		};
-		2CA326200896AD4900168862 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEPLOYMENT_LOCATION = YES;
-				DSTROOT = "$(HOME)";
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = /Library/QuickLook;
-				PRODUCT_BUNDLE_IDENTIFIER = com.flopcode.hexql;
-				PRODUCT_NAME = HexQL;
-				WRAPPER_EXTENSION = qlgenerator;
-			};
-			name = Release;
-		};
-		2CA326230896AD4900168862 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEPLOYMENT_LOCATION = NO;
-				DEPLOYMENT_POSTPROCESSING = YES;
-				DSTROOT = /;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
-				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		2CA326240896AD4900168862 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEPLOYMENT_LOCATION = YES;
-				DEPLOYMENT_POSTPROCESSING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INSTALL_PATH = "$(HOME)/Library/QuickLook";
-				PREBINDING = NO;
-				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		85B387D41BED78EA002E5473 /* Debug */ = {
+		A10000000000000000000080 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -417,83 +327,177 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = Test/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.flopcode.hexql.Test;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		85B387D51BED78EA002E5473 /* Release */ = {
+		A10000000000000000000081 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = Test/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.flopcode.hexql.Test;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A10000000000000000000083 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = HexQLApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flopcode.hexql.app;
+				PRODUCT_NAME = HexQL;
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A10000000000000000000084 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = HexQLApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flopcode.hexql.app;
+				PRODUCT_NAME = HexQL;
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A10000000000000000000086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = HexQLPreviewExtension/HexQLPreviewExtension.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = HexQLPreviewExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flopcode.hexql.app.preview-extension;
+				PRODUCT_NAME = HexQLPreviewExtension;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A10000000000000000000087 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = HexQLPreviewExtension/HexQLPreviewExtension.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = HexQLPreviewExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.flopcode.hexql.app.preview-extension;
+				PRODUCT_NAME = HexQLPreviewExtension;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2CA3261E0896AD4900168862 /* Build configuration list for PBXNativeTarget "HexQL" */ = {
+		A10000000000000000000082 /* Build configuration list for PBXProject "HexQL" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2CA3261F0896AD4900168862 /* Debug */,
-				2CA326200896AD4900168862 /* Release */,
+				A10000000000000000000080 /* Debug */,
+				A10000000000000000000081 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2CA326220896AD4900168862 /* Build configuration list for PBXProject "HexQL" */ = {
+		A10000000000000000000085 /* Build configuration list for PBXNativeTarget "HexQLApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2CA326230896AD4900168862 /* Debug */,
-				2CA326240896AD4900168862 /* Release */,
+				A10000000000000000000083 /* Debug */,
+				A10000000000000000000084 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		85B387D61BED78EA002E5473 /* Build configuration list for PBXNativeTarget "Test" */ = {
+		A10000000000000000000088 /* Build configuration list for PBXNativeTarget "HexQLPreviewExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				85B387D41BED78EA002E5473 /* Debug */,
-				85B387D51BED78EA002E5473 /* Release */,
+				A10000000000000000000086 /* Debug */,
+				A10000000000000000000087 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+	rootObject = A10000000000000000000070 /* Project object */;
 }

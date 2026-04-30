@@ -1,7 +1,30 @@
-* HexQL Plugin [[https://travis-ci.org/gizmomogwai/hexql][https://travis-ci.org/gizmomogwai/hexql.svg?branch=master]]
-Generator for Quicklook that catches all files and shows the first few
-bytes a hex/ascii table or text.
+* HexQL
 
-* Installation
-Clone repository and build. The build automatically puts the plugin to
-~/Library/QuickLook.
+HexQL is a macOS app containing a Quick Look preview extension. When the
+system has no more specific Quick Look preview for a file type, HexQL shows the
+first 4 KiB as linked hex and ASCII views.
+
+The preview is still template driven: =template.dhtml= provides the markup,
+=style.css= and =jquery.ui.tabs.css= provide the colors, and
+=jquery-1.2.3.js= plus =jquery.ui.tabs.js= provide the tab and hover behavior.
+
+* Building
+
+#+begin_src sh
+xcodebuild -project HexQL.xcodeproj -scheme HexQLApp -configuration Release SYMROOT=build build
+#+end_src
+
+The build product is =build/Release/HexQL.app=. Run or copy the app once so
+macOS can discover the embedded Quick Look preview extension, then refresh
+Quick Look if needed:
+
+#+begin_src sh
+pluginkit -a build/Release/HexQL.app
+qlmanage -r
+#+end_src
+
+* Testing
+
+Use =qlmanage -p path/to/file= with a file that does not already have a more
+specific system preview. The extension process is named
+=HexQLPreviewExtension=.
