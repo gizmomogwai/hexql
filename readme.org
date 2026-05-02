@@ -1,30 +1,16 @@
 * HexQL
 
-HexQL is a macOS app containing a Quick Look preview extension. When the
-system has no more specific Quick Look preview for a file type, HexQL shows the
-first 4 KiB as linked hex and ASCII views.
+HexQL is a macOS app containing a Quick Look preview extension.
+It seems that its not possible anymore to implement a generic quicklook extension
+for public.data or public.content to catch all UTI's without more specific quicklook plugins.
 
-The preview is still template driven: =template.dhtml= provides the markup,
-=style.css= and =jquery.ui.tabs.css= provide the colors, and
-=jquery-1.2.3.js= plus =jquery.ui.tabs.js= provide the tab and hover behavior.
-
-* Building
+* Installation
 
 #+begin_src sh
-xcodebuild -project HexQL.xcodeproj -scheme HexQLApp -configuration Release SYMROOT=build build
+rake build install
 #+end_src
 
-The build product is =build/Release/HexQL.app=. Run or copy the app once so
-macOS can discover the embedded Quick Look preview extension, then refresh
-Quick Look if needed:
-
-#+begin_src sh
-pluginkit -a build/Release/HexQL.app
-qlmanage -r
-#+end_src
+This will copy the =HexQL.app= to =~/Applications=.
 
 * Testing
-
-Use =qlmanage -p path/to/file= with a file that does not already have a more
-specific system preview. The extension process is named
-=HexQLPreviewExtension=.
+Use =qlmanage -p file.hexql=

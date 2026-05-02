@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372973962FA5EAD400A5CF8F /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 372973952FA5EAD400A5CF8F /* style.css */; };
+		376EAEBD2FA5E55900E982E7 /* jquery-ui.css in Resources */ = {isa = PBXBuildFile; fileRef = 376EAEB42FA5E55900E982E7 /* jquery-ui.css */; };
+		376EAEC12FA5E55900E982E7 /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = 376EAEB32FA5E55900E982E7 /* jquery.js */; };
+		376EAEC32FA5E55900E982E7 /* jquery-ui.js in Resources */ = {isa = PBXBuildFile; fileRef = 376EAEB52FA5E55900E982E7 /* jquery-ui.js */; };
 		A10000000000000000000040 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000010 /* main.swift */; };
 		A10000000000000000000041 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000012 /* PreviewProvider.swift */; };
 		A10000000000000000000042 /* HexPreviewRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000013 /* HexPreviewRenderer.swift */; };
 		A10000000000000000000043 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000014 /* Template.swift */; };
 		A10000000000000000000044 /* template.dhtml in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000017 /* template.dhtml */; };
-		A10000000000000000000045 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000018 /* style.css */; };
-		A10000000000000000000046 /* jquery.ui.tabs.css in Resources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000019 /* jquery.ui.tabs.css */; };
-		A10000000000000000000047 /* jquery.ui.tabs.js in Resources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001A /* jquery.ui.tabs.js */; };
-		A10000000000000000000048 /* jquery-1.2.3.js in Resources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001B /* jquery-1.2.3.js */; };
 		A10000000000000000000049 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001E /* AppKit.framework */; };
 		A1000000000000000000004A /* QuickLookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001F /* QuickLookUI.framework */; };
 		A1000000000000000000004B /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10000000000000000000020 /* UniformTypeIdentifiers.framework */; };
@@ -47,6 +47,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		372973952FA5EAD400A5CF8F /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		376EAEB32FA5E55900E982E7 /* jquery.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
+		376EAEB42FA5E55900E982E7 /* jquery-ui.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "jquery-ui.css"; sourceTree = "<group>"; };
+		376EAEB52FA5E55900E982E7 /* jquery-ui.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "jquery-ui.js"; sourceTree = "<group>"; };
 		A10000000000000000000010 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		A10000000000000000000011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A10000000000000000000012 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
@@ -55,10 +59,6 @@
 		A10000000000000000000015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A10000000000000000000016 /* HexQLPreviewExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HexQLPreviewExtension.entitlements; sourceTree = "<group>"; };
 		A10000000000000000000017 /* template.dhtml */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = template.dhtml; sourceTree = "<group>"; };
-		A10000000000000000000018 /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
-		A10000000000000000000019 /* jquery.ui.tabs.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = jquery.ui.tabs.css; sourceTree = "<group>"; };
-		A1000000000000000000001A /* jquery.ui.tabs.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jquery.ui.tabs.js; sourceTree = "<group>"; };
-		A1000000000000000000001B /* jquery-1.2.3.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "jquery-1.2.3.js"; sourceTree = "<group>"; };
 		A1000000000000000000001C /* HexQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HexQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1000000000000000000001D /* HexQLPreviewExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HexQLPreviewExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1000000000000000000001E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -121,10 +121,10 @@
 			isa = PBXGroup;
 			children = (
 				A10000000000000000000017 /* template.dhtml */,
-				A10000000000000000000018 /* style.css */,
-				A10000000000000000000019 /* jquery.ui.tabs.css */,
-				A1000000000000000000001A /* jquery.ui.tabs.js */,
-				A1000000000000000000001B /* jquery-1.2.3.js */,
+				376EAEB32FA5E55900E982E7 /* jquery.js */,
+				376EAEB42FA5E55900E982E7 /* jquery-ui.css */,
+				376EAEB52FA5E55900E982E7 /* jquery-ui.js */,
+				372973952FA5EAD400A5CF8F /* style.css */,
 			);
 			name = "Preview Resources";
 			sourceTree = "<group>";
@@ -238,11 +238,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				376EAEBD2FA5E55900E982E7 /* jquery-ui.css in Resources */,
+				376EAEC12FA5E55900E982E7 /* jquery.js in Resources */,
+				372973962FA5EAD400A5CF8F /* style.css in Resources */,
+				376EAEC32FA5E55900E982E7 /* jquery-ui.js in Resources */,
 				A10000000000000000000044 /* template.dhtml in Resources */,
-				A10000000000000000000045 /* style.css in Resources */,
-				A10000000000000000000046 /* jquery.ui.tabs.css in Resources */,
-				A10000000000000000000047 /* jquery.ui.tabs.js in Resources */,
-				A10000000000000000000048 /* jquery-1.2.3.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +399,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HexQLApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.flopcode.hexql.app;
 				PRODUCT_NAME = HexQL;
 				SDKROOT = macosx;
@@ -417,7 +420,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HexQLApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.flopcode.hexql.app;
 				PRODUCT_NAME = HexQL;
 				SDKROOT = macosx;
@@ -437,8 +443,12 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HexQLPreviewExtension/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.flopcode.hexql.app.preview-extension;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flopcode.hexql.app.preview-extension";
 				PRODUCT_NAME = HexQLPreviewExtension;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -457,8 +467,12 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HexQLPreviewExtension/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.flopcode.hexql.app.preview-extension;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flopcode.hexql.app.preview-extension";
 				PRODUCT_NAME = HexQLPreviewExtension;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;

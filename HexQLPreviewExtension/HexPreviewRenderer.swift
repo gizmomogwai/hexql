@@ -142,18 +142,18 @@ enum HexPreviewRenderer {
         contentType: UTType(filenameExtension: "css") ?? .plainText
       ),
       PreviewAttachment(
-        identifier: "jquery.ui.tabs.css",
-        data: loadDataResource(named: "jquery.ui.tabs", extension: "css", bundle: bundle),
+        identifier: "jquery-ui.css",
+        data: loadDataResource(named: "jquery-ui", extension: "css", bundle: bundle),
         contentType: UTType(filenameExtension: "css") ?? .plainText
       ),
       PreviewAttachment(
-        identifier: "jquery-1.2.3.js",
-        data: loadDataResource(named: "jquery-1.2.3", extension: "js", bundle: bundle),
+        identifier: "jquery.js",
+        data: loadDataResource(named: "jquery", extension: "js", bundle: bundle),
         contentType: UTType(filenameExtension: "js") ?? .plainText
       ),
       PreviewAttachment(
-        identifier: "jquery.ui.tabs.js",
-        data: loadDataResource(named: "jquery.ui.tabs", extension: "js", bundle: bundle),
+        identifier: "jquery-ui.js",
+        data: loadDataResource(named: "jquery-ui", extension: "js", bundle: bundle),
         contentType: UTType(filenameExtension: "js") ?? .plainText
       )
     ]
